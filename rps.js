@@ -1,7 +1,7 @@
 
 function getComputerChoice() {
     /*get a RandomInt between 0 and 2 inclusive*/
-    a = getRandomInt(3);
+    let a = getRandomInt(3);
     console.log(a);
     if (a === 0) {
         console.log('Rock');
@@ -26,10 +26,14 @@ Lose! Paper beats Rock"*/
 
 function playRound (playerSelection, computerSelection) {
     //propt player to insert rock, paper or scissors
-    playerSelection
-    
-    return 'You Lose! Paper beats Rock'
+
+    //if player chooses rock he wins agains scissors
+
+
+    return playerSelection;
 }
 
+
+let playerSelection = prompt("Rock, Paper or Scissors?");
 console.log(getComputerChoice());
 
