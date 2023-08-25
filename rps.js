@@ -27,10 +27,27 @@ Lose! Paper beats Rock"*/
 function playRound (playerSelection, computerSelection) {
     //propt player to insert rock, paper or scissors
 
-    //if player chooses rock he wins agains scissors
+    //let 0 = lose, 1 = win, 2 = tie
+    let outcome = 1;
+    //winning scenerios
+    if ((playerSelection==='Rock'&&computerSelection==='Scissors')||
+    (playerSelection==='Paper'&&computerSelection==='Rock')||
+    (playerSelection==='Scissors'&&computerSelection==='Paper') ) {
+        outcome = 1;
+    } 
+    if (playerSelection===computerSelection) {
+        outcome = 2;       
+    } else {
+        outcome = 0;
+    }
 
-
-    return playerSelection;
+    if (outcome === 1) {
+        return `You Win! ${playerSelection} beats ${computerSelection}`
+    } if (outcome ===0) {
+        return `You Lose! ${playerSelection} beats ${computerSelection}`
+    } else {
+        return `It is a Tie! No one wins!`
+    }
 }
 
 
