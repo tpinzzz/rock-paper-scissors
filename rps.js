@@ -24,18 +24,18 @@ playerSelection and computerSelection - and then return a
 string that declares the winner of the round like so: "You
 Lose! Paper beats Rock"*/
 
-function playRound (playerSelection, computerSelection) {
+function playRound(playerSelection, computerSelection) {
     //propt player to insert rock, paper or scissors
 
     //let 0 = lose, 1 = win, 2 = tie
     let outcome = 1;
-    //winning scenerios
-    if ((playerSelection==='Rock'&&computerSelection==='Scissors')||
-    (playerSelection==='Paper'&&computerSelection==='Rock')||
-    (playerSelection==='Scissors'&&computerSelection==='Paper') ) {
+    //winning scenerios 
+    if ((playerSelection.toLowerCase() ==='rock'&&computerSelection.toLowerCase()==='sissors')||
+    (playerSelection.toLowerCase()==='paper'&&computerSelection.toLowerCase()==='rock')||
+    (playerSelection.toLowerCase()==='scissors'&&computerSelection.toLowerCase()==='paper') ) {
         outcome = 1;
     } 
-    if (playerSelection===computerSelection) {
+    if (playerSelection.toLowerCase()===computerSelection.toLowerCase()) {
         outcome = 2;       
     } else {
         outcome = 0;
