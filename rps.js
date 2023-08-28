@@ -27,30 +27,26 @@ Lose! Paper beats Rock"*/
 function playRound(playerSelection, computerSelection) {
     //propt player to insert rock, paper or scissors
 
-    //let 0 = lose, 1 = win, 2 = tie
-    let outcome = 1;
+    //normalize case
+    playerSelection = playerSelection.slice(0,1).toUpperCase() + playerSelection.slice(1).toLowerCase();
+    console.log(typeof(playerSelection));
     //winning scenerios 
-    if ((playerSelection.toLowerCase() ==='rock'&&computerSelection.toLowerCase()==='sissors')||
-    (playerSelection.toLowerCase()==='paper'&&computerSelection.toLowerCase()==='rock')||
-    (playerSelection.toLowerCase()==='scissors'&&computerSelection.toLowerCase()==='paper') ) {
-        outcome = 1;
+    if (((playerSelection ==='Rock') && (computerSelection ==='Scissors'))
+    || ((playerSelection === 'Paper') && (computerSelection === 'Rock'))
+    || ((playerSelection === 'Scissors') && (computerSelection === 'Paper'))) {
+        return `You Win! ${playerSelection} beats ${computerSelection}`;
     } 
-    if (playerSelection.toLowerCase()===computerSelection.toLowerCase()) {
-        outcome = 2;       
+    if (playerSelection === computerSelection) {
+        return `It is a Tie! No one wins!`;    
     } else {
-        outcome = 0;
-    }
-
-    if (outcome === 1) {
-        return `You Win! ${playerSelection} beats ${computerSelection}`
-    } if (outcome ===0) {
-        return `You Lose! ${playerSelection} beats ${computerSelection}`
-    } else {
-        return `It is a Tie! No one wins!`
+        return `You Lose! ${playerSelection} beats ${computerSelection}`;
     }
 }
 
 
 let playerSelection = prompt("Rock, Paper or Scissors?");
-console.log(getComputerChoice());
+let computerSelection = getComputerChoice();
+console.log(playerSelection);
+console.log(computerSelection);
+console.log(playRound(playerSelection,computerSelection));
 
