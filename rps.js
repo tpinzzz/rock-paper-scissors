@@ -4,7 +4,7 @@ function getComputerChoice() {
     let a = getRandomInt(3);
     console.log(a);
     if (a === 0) {
-        console.log('Rock');
+
         return 'Rock';
     }
     else if (a === 1) {
@@ -43,10 +43,35 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+/*Write a NEW function called game(). Use the previous 
+function inside of this one to play a 5 round game that
+keeps score and reports a winner or loser at the end.*/
 
-let playerSelection = prompt("Rock, Paper or Scissors?");
-let computerSelection = getComputerChoice();
-console.log(playerSelection);
-console.log(computerSelection);
-console.log(playRound(playerSelection,computerSelection));
+function game() {
+    
+    let playerwins = 0;
+    let computerWins = 0;
+    for (let i = 0; i < 5; i++) {
+        let playerSelection = prompt("Rock, Paper or Scissors?");
+        x = playRound(playerSelection,getComputerChoice());
+        console.log(x);
+        outcome = x.slice(4,5);
+        console.log(outcome);
+        if (outcome === 'W') {
+            playerwins++;
+        } if (outcome === 'L') {
+            computerWins++;
+        } else {
+            //do nothing
+        }
+    }
+    if (playerwins > computerWins) {
+        return `You win ${playerwins} to ${computerWins}`;
+    } 
+    if (computerWins > playerwins) {
+        return `You Lose ${computerWins} to ${playerwins}`;
+    } 
+    
+}
 
+console.log(game());
