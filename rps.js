@@ -14,6 +14,7 @@ function getComputerChoice() {
     }
 }
 
+//if getrandomint(3) returns 0,1 or 2
 function getRandomInt(max) {
     return Math.floor(Math.random()*max);
 }
