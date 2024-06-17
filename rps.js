@@ -52,20 +52,21 @@ function game() {
     
     let playerwins = 0;
     let computerWins = 0;
-    for (let i = 0; i < 5; i++) {
-        let playerSelection = prompt("Rock, Paper or Scissors?");
-        x = playRound(playerSelection,getComputerChoice());
-        console.log(x);
-        outcome = x.slice(4,5);
-        console.log(outcome);
-        if (outcome === 'W') {
-            playerwins++;
-        } if (outcome === 'L') {
-            computerWins++;
-        } else {
-            //do nothing
-        }
+        
+    let playerSelection = prompt("Rock, Paper or Scissors?");
+    x = playRound(playerSelection,getComputerChoice());
+    
+    console.log(x);
+    outcome = x.slice(4,5);
+    console.log(outcome);
+    if (outcome === 'W') {
+        playerwins++;
+    } if (outcome === 'L') {
+        computerWins++;
+    } else {
+        //do nothing
     }
+
     if (playerwins > computerWins) {
         return `You win ${playerwins} to ${computerWins}`;
     } 
